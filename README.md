@@ -2,9 +2,15 @@
 Create a smi file in Web based on the video
 - Copyright (c) 2019 [InfoLab](http://infolab.kunsan.ac.kr) ([Donggun LEE](http://duration.digimoon.net))
 - How to install
-    ```bash
-    pip install VideoToSMI-Server
-    ```
+    - requirement
+        ```bash
+        # python 3.6 -- tensorflow or tensorflow-gpu
+        pip install tensorflow-gpu==1.9.0 exifread>=2.1.2 piexif>=1.1.2 pillow>=6.0.0 matplotlib>=3.1.0 scikit-image>=0.15.0 IPython>=7.5.0 keras>=2.2.4 cython>=0.29.7 deepgeo VideoToSMI ConfigHelper
+        ```
+    - install
+        ```bash
+        pip install VideoToSMI-Server
+        ```
     - other version
         ```bash
         # 0.0.3
@@ -12,6 +18,7 @@ Create a smi file in Web based on the video
         # 0.0.4
         pip install VideoToSMI-Server==0.0.4
         ```
+    
 - How to use
     ```python
     from VideoToSMIServer import Server, ServerConfig
