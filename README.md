@@ -7,12 +7,12 @@ Create a smi file in Web based on the video
     ```
     - other version
         ```bash
-        # 0.0.1
-        pip install VideoToSMI-Server==0.0.1
+        # 0.0.2
+        pip install VideoToSMI-Server==0.0.2
         ```
 - How to use
     ```python
-    from VideoToSMI-Server import Server, ServerConfig
+    from VideoToSMIServer import Server, ServerConfig
 
     config = ServerConfig()
     config.MODEL_NAME = "mscoco"

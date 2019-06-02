@@ -100,15 +100,3 @@ class Server:
         s = BaseHTTPServer.HTTPServer((self.config.IP, self.config.PORT), self.server)
         print("{}:{} ... 대기".format(str(self.config.IP), str(self.config.PORT)))
         s.serve_forever()
-
-
-config = ServerConfig()
-config.MODEL_NAME = "mscoco"
-config.IP = "202.31.147.184"
-config.PORT=802
-config.MODEL_CONFIG_PATH = "D:/test/config.json"
-config.MODEL_ENGINE = "maskrcnn"
-config.FILTER = ['truck','car','bus']
-config.VIDEO_FOLDER = "D:/test/videotosmi/"
-server = Server(config)
-server.Run()

@@ -1,4 +1,4 @@
-from VideoToSMI-Server import Server, ServerConfig
+from VideoToSMIServer import Server, ServerConfig
 
 config = ServerConfig()
 config.MODEL_NAME = "mscoco"
