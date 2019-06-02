@@ -27,3 +27,4 @@ Create a smi file in Web based on the video
 
     # POST VIDEO FILE -> http://127.0.0.1:80/ -> Reulst SMI FILE
     ```
+ - [How to Test](https://github.com/Sotaneum/VideoToSMI-Website)
