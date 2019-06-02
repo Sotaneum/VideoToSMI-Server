@@ -56,21 +56,18 @@ class Server:
                     print(e, " Fixed: change UTF-8")
                     self.wfile.write(bytes(data, "utf-8"))
             def do_GET(self):
-                url = str(self.path).split("/?")
-                if len(url) == 0:
+                url = str(self.path).split("/")[-1]
+                ext = url.split(".")[-1]
+                if len(url) <= 4 or ext!="smi":
                     self.send_response(404)
                     self.end_headers()
                 else:
-                    par = url[1].split("=")
-                    if par[0] == "smi":
-                        self.send_response(200)
-                        self.send_header('Access-Control-Allow-Origin', '*')
-                        self.send_header('Content-type', 'application/text; charset=utf-8')
-                        self.end_headers()
-                        self.write_file(par[1] + ".smi")
-                    else:
-                        self.send_response(404)
-                        self.end_headers()
+                    self.send_response(200)
+                    self.send_header('Access-Control-Allow-Origin', '*')
+                    self.send_header('Content-type', 'application/text; charset=utf-8')
+                    self.end_headers()
+                    self.write_file(self.config.VIDEO_FOLDER+url)
+
             def do_POST(self):
                 form = cgi.FieldStorage(
                     fp=self.rfile,
@@ -81,7 +78,6 @@ class Server:
                 key = list(form.keys())[0]
                 obj = form[key]
                 filename = str(obj).split("FieldStorage('"+key+"', '")[1].split("', ")[0]
-                ori_filename = filename
                 if self.config.IS_RANDOM_NAME:
                     filename= Utils.create_name(filename.split(".")[-1],self.config.VIDEO_FOLDER)
                 
@@ -91,7 +87,7 @@ class Server:
                 self.send_header('Access-Control-Allow-Origin', '*')
                 self.send_header('Content-type', 'text/html; charset=utf-8')
                 self.end_headers()
-                file_name = img_names.split(".")[0]
+                file_name = img_names.split(".")[0].split("/")[-1]+".smi"
                 
                 self.write_data(file_name)
         return __

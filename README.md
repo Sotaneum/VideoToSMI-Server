@@ -9,6 +9,8 @@ Create a smi file in Web based on the video
         ```bash
         # 0.0.3
         pip install VideoToSMI-Server==0.0.3
+        # 0.0.4
+        pip install VideoToSMI-Server==0.0.4
         ```
 - How to use
     ```python

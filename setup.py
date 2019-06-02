@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='VideoToSMI-Server',
-      version='0.0.3',
+      version='0.0.4',
       url='https://github.com/Sotaneum/VideoToSMI-Server',
       author='Donggun LEE',
       author_email='gnyotnu39@gmail.com',
