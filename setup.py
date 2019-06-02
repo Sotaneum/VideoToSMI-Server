@@ -10,8 +10,16 @@ setup(name='videotosmi-server',
       long_description=open('README.md').read(),
       long_description_content_type='text/markdown',
       zip_safe=False,
+<<<<<<< HEAD
       setup_requires=['deepgeo','videotosmi','confighelper'],
       classifiers=[
           'License :: OSI Approved :: MIT License'
       ]
      )
+=======
+      setup_requires=['deepgeo','videotosmi','confighelper','tensorflow-gpu==1.9.0','exifread','piexif','pillow','matplotlib','scikit-image','IPython','keras','cython'],
+      classifiers=[
+          'License :: OSI Approved :: MIT License'
+      ]
+     )
+>>>>>>> 80dacef53020ed35ccba091b257654f34bdbd5b0
